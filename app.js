@@ -40,9 +40,31 @@ function menu() {
                         //validate that the id's do not match need to ADD this in to make sure ids, and passwords dont match
                         return true;
                     }
-                    return
+                    return "Please enter at least once character";
                 }
             },
+            {
+                type: 'input',
+                name: 'managerEmail',
+                message: 'What is the managers email address?',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least once character";
+                }
+            },
+            {
+                type: 'input',
+                name: 'officeNum',
+                message: 'What is the managers office number?',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least once character";
+                }
+            }
         ])
     }
 }
