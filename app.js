@@ -114,7 +114,56 @@ function menu() {
                 }
             }
         ])
-}
+    }
+    function createIntern() {
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'internName',
+                message: 'What is your name?',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least once character";
+                }
+            },
+            {
+                type: 'input',
+                name: 'internId',
+                message: 'What is the interns id?',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least once character";
+                }
+            },
+            {
+                type: 'input',
+                name: 'internEmail',
+                message: 'What is the interns email?',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least once character";
+                }
+            },
+            {
+                type: 'input',
+                name: 'internSchool',
+                messgae: 'What school did the intern attend?',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least once character";
+                }
+            }
+        ])
+    }
+
 }
 menu();
 
