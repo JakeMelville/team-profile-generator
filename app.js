@@ -36,7 +36,7 @@ function menu() {
                 message: 'What is the managers id?',
                 validate: answer => {
                     if (answer !== "") {
-                        
+
                         //validate that the id's do not match need to ADD this in to make sure ids, and passwords dont match
                         return true;
                     }
@@ -67,6 +67,54 @@ function menu() {
             }
         ])
     }
+    function createEngineer() {
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'engineerName',
+                message: 'What is your name?',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least once character";
+                }
+            },
+            {
+                type: 'input',
+                name: 'engineerId',
+                message: 'What is the engineers id?',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least once character";
+                }
+            },
+            {
+                type: 'input',
+                name: 'engineerEmail',
+                message: 'What is the engineers email?',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least once character";
+                }
+            },
+            {
+                type: 'input',
+                name: 'engineerGit',
+                messgae: 'What is the engineers github username?',
+                validate: answer => {
+                    if (answer !== "") {
+                        return true;
+                    }
+                    return "Please enter at least once character";
+                }
+            }
+        ])
+}
 }
 menu();
 
