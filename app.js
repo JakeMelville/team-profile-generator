@@ -12,6 +12,7 @@ const render = require("./lib/htmlRenderer.js");
 
 const members = [];
 const idArr = [];
+var htmlContent = '';
 
 async function addTeamMember() {
     const memberChoice = await inquirer.prompt({
@@ -35,12 +36,13 @@ async function addTeamMember() {
             members.push(intern);
             idArr.push(intern.id);
             addTeamMember();
-
+            break;
         default: 
-        console.log('default');
-
-
-    };
+            render(members);
+            console.log(render(members));
+            // fs.writeFile('/output', render(members), (error) => {console.log("error")});
+        };
+            
 }
 
 async function createManager() {
@@ -199,8 +201,6 @@ async function menu() {
     idArr.push(manager.id);
 
     const memberSelect = await addTeamMember();
-
-   
 
 }
 menu();
